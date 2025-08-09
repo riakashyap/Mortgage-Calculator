@@ -8,7 +8,9 @@ const Navbar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar>
-          <Typography variant="h4">Bank of Ria</Typography>
+          <div style={{ marginLeft: "70px" }}>
+          <Typography variant="h4">The Great Bank</Typography>
+          </div>
         </Toolbar>
       </Container>
     </AppBar>
