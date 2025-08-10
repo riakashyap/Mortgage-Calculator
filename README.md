@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# 🏠 Mortgage Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive React-based **Mortgage Calculator** built with **Material UI**, **Chart.js**, and **custom sliders** to help visualize monthly payments and the breakdown between principal and interest.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+- **Home Value Slider** – Adjust the purchase price of the home.
+- **Down Payment Slider** – Adjust your upfront payment; loan amount updates automatically.
+- **Loan Amount Display** – Automatically calculated from home value and down payment.
+- **Interest Rate Slider** – Fine-grained control with smooth 1% increments.
+- **Loan Tenure Selector** – Choose from common loan terms (5–25 years).
+- **Monthly Payment Calculation** – Uses standard mortgage amortization formula.
+- **Pie Chart Breakdown** – Visualizes principal vs. total interest over the loan’s lifetime.
+- **Responsive Layout** – Optimized for desktops and tablets.
 
-### `npm start`
+## 🖼 Preview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<img width="1352" height="916" alt="mortgage" src="https://github.com/user-attachments/assets/957cc128-4c5f-4206-9735-5eda252d4d71" />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Installation
 
-### `npm run build`
+```bash
+# Clone the repository
+git clone https://github.com/riakashyap/Mortgage-Calculator.git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Navigate into the project
+cd Mortgage-Calculator
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Install dependencies
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Start development server
+npm start
+```
 
-### `npm run eject`
+## 📦 Dependencies
+* React – UI library
+* Material UI (MUI) – Components & styling
+* Chart.js – Data visualization
+* react-chartjs-2 – React wrapper for Chart.js
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## To install Chart.js & wrapper:
+```bash
+npm install chart.js react-chartjs-2
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## ⚙ Usage
+* Home Value Slider – Set the value of the home.
+* Down Payment Slider – Choose your upfront payment.
+* Loan Amount – Automatically recalculates (Home Value - Down Payment).
+* Interest Rate Slider – Adjust to desired interest rate (2–18%).
+* Tenure Selector – Choose loan duration in years.
+* Results – View monthly payment and breakdown chart.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## 📐 Calculation Formula
+M = P × [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Where:
+* M = monthly payment
+* P = loan amount
+* r = monthly interest rate (annualRate / 12)
+* n = total number of monthly payments (years × 12)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## 📊 Example
+For a $3000 home, $9000 down payment, 15-year loan, at 12% interest:
+* Loan Amount: $2100
+* Monthly Payment: $25.21
+* Total Interest Paid: $2,437.80
+* Chart shows ratio of principal to interest.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## 🛠 Development Notes
+* The loan amount can never exceed the home value minus the down payment.
+* All sliders are built with MUI's Slider component wrapped in SliderComponent.
+* Pie chart styling uses chart.js defaults but can be customized in Result.js.
+* Layout uses MUI’s Grid and Stack for spacing.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
